@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css file -->
+    <link rel="stylesheet" href="{% static 'login/main.css' %}">
+
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Facebook</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'login/20673.png' %}">
+</head>
+
+<body class="bg-grey">
+    <!-- mainJs file     -->
+    <script src="{% static 'login/main.js' %}"></script>
+
+    <!-- login -->
+    <div class="container d-flex flex-column flex-lg-row justify-content-evenly mt-5 pt-5">
+        <!-- heading -->
+        <div class="text-center text-lg-start mt-lg pt-lg-5">
+            <h1 class="text-primary fw-blod fs-0">Facebook</h1>
+            <p class="w-75 mx-auto mx-lg-0 fs-4">Facebook helps you to connect and share with the people in your life.
+            </p>
+        </div>
+        <!-- form -->
+        <div style="max-width: 28rem; width: 100%;">
+            <div class="bg-white shadow rounded p-3 input-group-lg">
+                <input type="email" class="form-control my-3" placeholder="Email adders or Phone Number">
+                <input type="password" class="form-control my-3" placeholder="Password">
+                <a href="/home">
+                    <button class="btn btn-primary w-100 my-3">Log in</button>
+                </a>
+                <a href="#" class="text-decoration-none text-center">
+                    <p>Forgotten password?</p>
+                </a>
+                <!-- create form -->
+                <hr>
+                <div class="text-center my-4">
+                    <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Create
+                        New Account</button>
+                </div>
+                <!-- creat modal -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- header -->
+                            <div class="modal-header">
+                                <div>
+                                    <h2 class="modal-title fs-5" id="staticBackdropLabel">Sign Up</h2>
+                                    <p class="text-muted fs-7">It's quick and easy</p>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <!-- Body -->
+                            <div class="modal-body">
+                                <form action="/" method="post">
+                                    {% csrf_token %}
+                                    <!-- name -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" name="sF_Name" class="form-control" placeholder="First Name">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" name="sL_Name" class="form-control" placeholder="Last Name">
+                                        </div>
+                                    </div>
+
+                                    <!-- email and passowrd -->
+                                    <input type="email" name="sM_Email" class="form-control my-3" placeholder="Moblie Number and email adders">
+                                    <input type="password" name="sPass" class="form-control my-3" placeholder="New Password">
+
+                                    <!-- dob -->
+                                    <div class="row my-3">
+                                        <span class="text-muted fs-7">
+                                            Date of Birth <i type="button" class="fas fa-question-circle"
+                                                data-bs-container="body" data-bs-toggle="popover"
+                                                data-bs-placement="right" data-bs-content="Your Date of Birth"></i>
+                                        </span>
+                                        <div class="col">
+                                            <select class="form-select" name="sDate">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select class="form-select" name="sMonth">
+                                                <option value="Jan">Jan</option>
+                                                <option value="Feb">Feb</option>
+                                                <option value="Mar">Mar</option>
+                                                <option value="Apr">Apr</option>
+                                                <option value="May">May</option>
+                                                <option value="Jun">Jun</option>
+                                                <option value="Jul">Jul</option>
+                                                <option value="Aug">Aug</option>
+                                                <option value="Sep">Sep</option>
+                                                <option value="Oct">Oct</option>
+                                                <option value="Nov">Nov</option>
+                                                <option value="Dec">Dec</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select class="form-select" name="sYear">
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2014">2014</option>
+                                                <option value="2013">2013</option>
+                                                <option value="2012">2012</option>   
+                                                <option value="2011">2011</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2000">2000</option>
+                                                <option value="1999">1999</option>
+                                                <option value="1998">1998</option>
+                                                <option value="1997">1997</option>
+                                                <option value="1996">1996</option>
+                                                <option value="1995">1995</option>
+                                                <option value="1994">1994</option>
+                                                <option value="1993">1993</option>
+                                                <option value="1992">1992</option>
+                                                <option value="1991">1991</option>
+                                                <option value="1990">1990</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- gneder -->
+                                    <div class="row my-3">
+                                        <span class="text-muted fs-7 ">
+                                            Gender <i type="button" class="fas fa-question-circle"
+                                                data-bs-container="body" data-bs-toggle="popover"
+                                                data-bs-placement="right" data-bs-content="Select Your Genderds"></i>
+                                        </span>
+                                        <div class="col">
+                                            <div class="border rounded p-2">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Male
+                                                </label>
+                                                <input class="form-check-input mx-4" type="radio" value="Male" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="border rounded p-2">
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Female
+                                                </label>
+                                                <input class="form-check-input mx-4" type="radio" value="Female" name="flexRadioDefault"
+                                                    id="flexRadioDefault2">
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="border rounded p-2">
+                                                <label class="form-check-label" for="flexRadioDefault3">
+                                                    Not to tell
+                                                </label>
+                                                <input class="form-check-input mx-2" type="radio" value="Not to tell" name="flexRadioDefault"
+                                                    id="flexRadioDefault3">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- disclamar -->
+                                    <div>
+                                        <span class="text-muted fs-7">
+                                            <p>
+                                                People who use our service may have uploaded your contact information to Facebook. <a href="#">Learn more.</a>
+                                            </p>
+                                            <p>
+                                                By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time.
+                                            </p>
+                                            </span>
+                                    </div>
+                                    <!-- btn -->
+                                    <div class="text-center mt-3">
+                                        <button type="submit" class="btn btn-success btn-lg" data-bs-dismiss="modal">Sign Up</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>
+
+            <!-- tag -->
+            <div class="my-5 pb-5 text-center">
+                <p class="fw-bold">
+                    <a href="#" class="text-decoration-none text-dark">Create a page</a>
+                    <span class="fw-normal"> for a celebrity, brand or busniss.</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- footer -->
+    <footer class="bg-white p-4 text-muted">
+        <div class="container">
+            <!-- language -->
+            <div class="d-flex flex-wrap">
+                <p class="mx-2 fs-7 mb-0">English(US)</p>
+                <p class="mx-2 fs-7 mb-0">हिन्दी</p>
+                <p class="mx-2 fs-7 mb-0">ਪੰਜਾਬੀ</p>
+                <p class="mx-2 fs-7 mb-0">मराठी</p>
+                <p class="mx-2 fs-7 mb-0">اردو</p>
+            </div>
+            <div class="mt-4 mx-2">
+                <p class="fs-7 text-center">Facebook &copy; 2023</p>
+            </div>
+        </div>
+    </footer>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+</body>
+
+</html>
